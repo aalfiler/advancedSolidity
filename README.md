@@ -8,27 +8,15 @@ This contract will mint the tokens automatically and distribute them to buyers i
 
 #### PupperCoinCrowdsale
 
-Since `RefundablePostDeliveryCrowdsale` inherits the `RefundableCrowdsale` contract, which requires a `goal` parameter, you must call the `RefundableCrowdsale` constructor from your `PupperCoinCrowdsale` constructor as well as the others. `RefundablePostDeliveryCrowdsale` does not have its own constructor, so just use the `RefundableCrowdsale` constructor that it inherits.
-
-If you forget to call the `RefundableCrowdsale` constructor, the `RefundablePostDeliveryCrowdsale` will fail since it relies on it (it inherits from `RefundableCrowdsale`), and does not have its own constructor.
-
-When passing the `open` and `close` times, use `now` and `now + 24 weeks` to set the times properly from your `PupperCoinCrowdsaleDeployer` contract.
+- `RefundablePostDeliveryCrowdsale` inherits the `RefundableCrowdsale` contract, which requires a `goal` parameter.
+- Call the `RefundableCrowdsale` constructor from the `PupperCoinCrowdsale` constructor as well as the others.
+- `RefundablePostDeliveryCrowdsale` does not have its own constructor and thus use the `RefundableCrowdsale` constructor that it inherits.
+- Pass the `open` and `close` times by using `now` and `now + 24 weeks` to set the times properly from `PupperCoinCrowdsaleDeployer` contract.
 
 #### PupperCoinCrowdsaleDeployer
 
-In this contract, you will model the deployment based off of the `ArcadeTokenCrowdsaleDeployer` you built previously. Leverage the [OpenZeppelin Crowdsale Documentation](https://docs.openzeppelin.com/contracts/2.x/crowdsales) for an example of a contract deploying another, as well as the starter code provided in [Crowdsale.sol](../Starter-Code/Crowdsale.sol).
+
 
 ### Deploying the Crowdsale
 
 Deploy the crowdsale to the Kovan or Ropsten testnet, and store the deployed address for later. Switch MetaMask to your desired network, and use the `Deploy` tab in Remix to deploy your contracts. Take note of the total gas cost, and compare it to how costly it would be in reality. Since you are deploying to a network that you don't have control over, faucets will not likely give out 300 test Ether. You can simply reduce the goal when deploying to a testnet to an amount much smaller, like 10,000 wei.
-
-### Submission
-
-Create a Github repo, and a `README.md` file explaining the process for purchasing PupperCoin (or whatever name you came up with).
-
-Also, please provide screenshots to illustrate the functionality (e.g. how you send Ether to the contract, how you add the token to MyCrypto and test a transaction, and how you test the time functionality etc.). Alternatively, you can also record your interactions with the contract as a gif (e.g. https://www.screentogif.com/)
-
-
-Ensure that anyone can run the steps and add the token to MyCrypto, or a similar wallet.
-
-Include information such as the token parameters, token name, crowdsale cap, etc.
