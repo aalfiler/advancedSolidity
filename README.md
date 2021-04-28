@@ -13,10 +13,6 @@ This contract will mint the tokens automatically and distribute them to buyers i
 - `RefundablePostDeliveryCrowdsale` does not have its own constructor and thus use the `RefundableCrowdsale` constructor that it inherits.
 - Pass the `open` and `close` times by using `now` and `now + 24 weeks` to set the times properly from `PupperCoinCrowdsaleDeployer` contract.
 
-#### PupperCoinCrowdsaleDeployer
-
-
-
 ### Deploying the Crowdsale
 
-Deploy the crowdsale to the Kovan or Ropsten testnet, and store the deployed address for later. Switch MetaMask to your desired network, and use the `Deploy` tab in Remix to deploy your contracts. Take note of the total gas cost, and compare it to how costly it would be in reality. Since you are deploying to a network that you don't have control over, faucets will not likely give out 300 test Ether. You can simply reduce the goal when deploying to a testnet to an amount much smaller, like 10,000 wei.
+![PUP](Images/addingPUPcoin.png)
